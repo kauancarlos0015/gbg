@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grande Desafio da Casa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-menu" class="screen">
+        <h1>Grande Desafio da Casa</h1>
+        <button id="play-button">PLAY</button>
+    </div>
+
+    <div id="player-selection" class="screen hidden">
+        <h2>Selecione o número de jogadores</h2>
+        <div class="player-options">
+            <button class="player-count-button" data-players="6">6 Jogadores</button>
+            <button class="player-count-button" data-players="12">12 Jogadores</button>
+            <button class="player-count-button" data-players="18">18 Jogadores</button>
+            <button class="player-count-button" data-players="24">24 Jogadores</button>
+            <button class="player-count-button" data-players="32">32 Jogadores</button>
+        </div>
+    </div>
+
+    <div id="player-names" class="screen hidden">
+        <h2>Digite o nome dos jogadores</h2>
+        <div id="player-input-container"></div>
+        <button id="start-game-button">Começar Jogo</button>
+    </div>
+
+    <div id="game-screen" class="screen hidden">
+        <h3 id="day-title">Dia 1</h3>
+        <p id="game-text"></p>
+        <button id="continue-button">Continuar</button>
+    </div>
+
+    <div id="monarch-proof" class="screen hidden">
+        <h2>PROVA DO LÍDER</h2>
+        <div class="proof-content">
+            <div class="proof-left">
+                <h3>Para vencer a prova, será necessário:</h3>
+                <ul id="proof-items"></ul>
+            </div>
+            <div class="proof-right">
+                <p><span id="proof-winner"></span> venceu a prova!</p>
+            </div>
+        </div>
+        <button id="continue-proof">Continuar</button>
+    </div>
+
+    <div id="paredao-announcement" class="screen hidden">
+        <h2 class="dark-screen-text">Temos os votos para o paredão...</h2>
+        <button id="continue-paredao">Continuar</button>
+    </div>
+
+    <div id="paredao-nominees" class="screen hidden">
+        <p>Por seus atos na casa, <span id="nominee1"></span> e <span id="nominee2"></span> foram indicados ao paredão.</p>
+        <button id="continue-after-nominees">Continuar</button>
+    </div>
+
+    <div id="elimination-announcement" class="screen hidden">
+        <h2>É FEITA A JUSTIÇA</h2>
+        <p>O Brasil o eliminou. Deixe a casa e nunca mais volte.</p>
+        <button id="reveal-elimination">Revelar</button>
+    </div>
+
+    <div id="elimination-result" class="screen hidden">
+        <p class="eliminated-text"><span id="eliminated-player"></span></p>
+        <button id="continue-after-elimination">Continuar</button>
+    </div>
+
+    <div id="final-screen" class="screen hidden">
+        <h2>FINAL DO JOGO</h2>
+        <p id="final-text"></p>
+        <button id="restart-game">Voltar ao Título</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
