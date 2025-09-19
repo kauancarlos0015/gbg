@@ -1,0 +1,85 @@
+body {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.screen {
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #e0e0e0;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #e0e0e0;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.dark-screen-text {
+    background-color: black;
+    color: white;
+    padding: 50px;
+}
+
+/* Estilos específicos para a Prova do Monarca */
+.proof-content {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.proof-left, .proof-right {
+    width: 48%;
+}
+
+.proof-right {
+    text-align: right;
+}
+
+#player-input-container input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
