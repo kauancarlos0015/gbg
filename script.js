@@ -90,9 +90,19 @@ function startDay() {
 
 function startFinalRound() {
     dayTitle.textContent = 'Dia Final';
+    showScreen(paredaoNomineesScreen);
+    nominee1Span.textContent = players[0];
+    nominee2Span.textContent = players[1];
+    
+    // Na final, a prova não acontece, o jogo vai direto para 4 rodadas e depois para eliminação.
+    continueAfterNomineesButton.removeEventListener('click', continueAfterNomineesFinal);
+    continueAfterNomineesButton.addEventListener('click', continueAfterNomineesFinal);
+}
+
+function continueAfterNomineesFinal() {
     roundCount = 0;
     showScreen(gameScreen);
-    nominateForParedao(players[0], players[1]); // Os 2 finalistas já estão no paredão
+    nextRoundParedao();
 }
 
 function nextRound() {
@@ -161,14 +171,7 @@ continueParedaoButton.addEventListener('click', () => {
     nominateForParedao();
 });
 
-function nominateForParedao(p1 = null, p2 = null) {
-    if (players.length <= 2) { // Caso seja a final, já mostra a tela
-        showScreen(paredaoNomineesScreen);
-        nominee1Span.textContent = players[0];
-        nominee2Span.textContent = players[1];
-        return;
-    }
-
+function nominateForParedao() {
     paredao = [];
     while (paredao.length < 2) {
         const nominee = players[Math.floor(Math.random() * players.length)];
@@ -203,9 +206,9 @@ function showEliminationScreen() {
 
 revealEliminationButton.addEventListener('click', () => {
     let eliminatedPlayer;
-    if (players.length <= 2) {
-        // Final
-        eliminatedPlayer = players[Math.floor(Math.random() * players.length)];
+    if (players.length === 2) {
+        // Final: um dos dois é eliminado
+        eliminatedPlayer = paredao[Math.floor(Math.random() * paredao.length)];
     } else {
         // Paredão normal
         eliminatedPlayer = paredao[Math.floor(Math.random() * paredao.length)];
@@ -218,7 +221,7 @@ revealEliminationButton.addEventListener('click', () => {
 });
 
 continueAfterEliminationButton.addEventListener('click', () => {
-    if (players.length <= 1) {
+    if (players.length === 1) {
         endGame();
     } else {
         day++;
