@@ -74,6 +74,13 @@ button:hover {
     text-align: right;
 }
 
+/* Ajuste para rolagem dos inputs de nome */
+#player-input-container {
+    max-height: 40vh; /* Limita a altura para 40% da tela */
+    overflow-y: auto; /* Adiciona scroll vertical se o conteúdo for maior */
+    padding-right: 10px; /* Adiciona um pequeno espaço para a barra de rolagem */
+}
+
 #player-input-container input {
     width: calc(100% - 20px);
     padding: 10px;
